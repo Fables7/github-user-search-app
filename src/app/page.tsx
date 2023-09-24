@@ -3,7 +3,9 @@ import { SearchBar, ToggleTheme } from "../components";
 
 export default function Home() {
   return (
-    <main className=" text-red-800 dark:text-blue-700">
+    <main className=" text-black dark:text-blue-700">
+      <h1>The Octocat</h1>
+      <h2>The Octocat</h2>
       <ToggleTheme />
       <SearchBar />
     </main>
