@@ -1,5 +1,8 @@
 "use client";
 import { useTheme } from "next-themes";
+import Image from "next/image";
+import moon from "../../assets/icon-moon.svg";
+import sun from "../../assets/icon-sun.svg";
 
 const ToggleTheme = () => {
   const { theme, setTheme } = useTheme();
@@ -8,18 +11,18 @@ const ToggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
   return (
-    <div>
-      <label htmlFor="toggleTheme">
-        Toggle Theme: {theme === "light" ? "Light" : "Dark"}
-      </label>
-      <button
-        id="toggleTheme"
-        aria-label="Toggle Dark Mode"
-        type="button"
-        className="bg-red-500 w-10 h-10 rounded-full"
-        onClick={toggleTheme}
+    <button onClick={toggleTheme} className="flex items-center justify-between">
+      <h4 className=" text-[var(--gray)]">
+        {theme === "light" ? "DARK" : "Light"}
+      </h4>
+      <Image
+        src={theme === "dark" ? sun : moon}
+        alt="Theme Icon"
+        width={20}
+        height={20}
+        className=" ml-2"
       />
-    </div>
+    </button>
   );
 };
 

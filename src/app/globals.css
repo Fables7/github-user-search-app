@@ -7,9 +7,12 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   /* Colors */
-  --main-light: #f6f8ff;
-  --main-dark: #141d2f;
   --accent: #0079ff;
+  /* Light Mode */
+  --main-light: #f6f8ff;
+  --gray: #697c9a;
+  /* Dark Mode */
+  --main-dark: #141d2f;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,6 +28,10 @@ body {
   background: var(--main-light);
   font-size: 0.938rem;
   line-height: 25px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* min-height: 100vh; */
 }
 
 h1 {
