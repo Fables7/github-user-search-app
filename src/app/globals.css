@@ -23,6 +23,8 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--main-light);
+  font-size: 0.938rem;
+  line-height: 25px;
 }
 
 h1 {
