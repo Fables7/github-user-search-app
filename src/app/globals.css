@@ -8,11 +8,13 @@
   --background-end-rgb: 255, 255, 255;
   /* Colors */
   --accent: #0079ff;
+  --accent-hover: #60abff;
   /* Light Mode */
   --main-light: #f6f8ff;
   --gray: #697c9a;
   /* Dark Mode */
   --main-dark: #141d2f;
+  --secondary-dark: #1e2a47;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,6 +40,12 @@ h1 {
   font-weight: bold;
   font-size: 1.625rem;
   line-height: 38px;
+}
+
+.dark h1,
+h2,
+h3 {
+  color: white;
 }
 
 h2 {
