@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <ReactQueryProvider>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body className={`${inter.className} ${spaceMono.className}`}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
