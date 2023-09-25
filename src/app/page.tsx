@@ -1,5 +1,5 @@
 "use client";
-import { SearchBar, ToggleTheme, UserDetails } from "../components";
+import { SearchBar, ToggleTheme, UserDetails, LinkItems } from "../components";
 import { useSelector } from "react-redux";
 import Image from "next/image";
 
@@ -13,6 +13,10 @@ export default function Home() {
     repos,
     followers,
     following,
+    location,
+    blog,
+    twitter,
+    company,
   } = useSelector((state: any) => state.githubUser);
   return (
     <main className="flex flex-col w-[327px] m-6 ">
@@ -56,6 +60,11 @@ export default function Home() {
               repos={repos}
               followers={followers}
             />
+            <LinkItems label={location} icon={"/icon-location"} />
+
+            <LinkItems label={blog} icon={"/icon-website"} />
+            <LinkItems label={twitter} icon={"/icon-twitter"} />
+            <LinkItems label={company} icon={"/icon-company"} />
           </>
         ) : (
           <h1>Search for a user</h1>

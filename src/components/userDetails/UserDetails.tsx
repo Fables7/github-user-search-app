@@ -20,7 +20,7 @@ const DetailItem = ({ title, value }: DetailItemProps) => {
 
 const UserDetails = ({ repos, followers, following }: UserDetailsProps) => {
   return (
-    <div className="w-full h-[85px] bg-[var(--main-light)] rounded-2xl grid grid-cols-3 px-3 mt-4">
+    <div className="w-full h-[85px] bg-[var(--main-light)] dark:bg-[var(--main-dark)] rounded-2xl grid grid-cols-3 px-3 my-6">
       <DetailItem title="Repos" value={repos} />
       <DetailItem title="Followers" value={followers} />
       <DetailItem title="Following" value={following} />
