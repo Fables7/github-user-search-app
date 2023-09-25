@@ -1,7 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../store/githubUser";
 
 export const useGetGithubUser = (username: string) => {
+  const dispatch = useDispatch();
   const { data, isLoading, isError, refetch } = useQuery(
     ["githubUser", username],
     async () => {
@@ -13,7 +16,8 @@ export const useGetGithubUser = (username: string) => {
           },
         }
       );
-      console.log("username is", username);
+
+      dispatch(setUser(responseData));
       return responseData;
     },
     {

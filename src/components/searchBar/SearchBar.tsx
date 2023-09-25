@@ -8,7 +8,7 @@ const SearchBar = () => {
   const [username, setUsername] = useState("");
   const [isMounted, setIsMounted] = useState(false);
 
-  const { data, isError, isLoading, refetch } = useGetGithubUser(username);
+  const { isError, isLoading, refetch } = useGetGithubUser(username);
 
   useEffect(() => {
     setIsMounted(true);
@@ -19,7 +19,6 @@ const SearchBar = () => {
   }
   const searchHandler = () => {
     refetch();
-    console.log(data);
   };
   return (
     <div className="flex w-full h-[60px] bg-white dark:bg-[var(--secondary-dark)] rounded-2xl shadow-custom px-2 items-center mt-8 ">
