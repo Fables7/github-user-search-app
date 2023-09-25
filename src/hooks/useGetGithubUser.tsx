@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const useGetGithubUser = (username: string) => {
   const { data, isLoading, isError, refetch } = useQuery(
-    ["githubUser"],
+    ["githubUser", username],
     async () => {
       const { data: responseData } = await axios.get(
         `https://api.github.com/users/${username}`,
@@ -13,6 +13,7 @@ export const useGetGithubUser = (username: string) => {
           },
         }
       );
+      console.log("username is", username);
       return responseData;
     },
     {
