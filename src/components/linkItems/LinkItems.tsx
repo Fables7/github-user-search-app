@@ -10,15 +10,19 @@ const LinkItems = ({ icon, label }: LinkItemsProps) => {
   const available = label ? true : false;
   const { theme } = useTheme();
   return (
-    <div className="flex items-center my-3 opacity-50">
-      <Image
-        src={`${icon + (theme === "dark" ? "-dark.svg" : ".svg")}`}
-        alt={label}
-        width={20}
-        height={20}
-      />
+    <div
+      className={`flex items-center my-3 opacity-${available ? "100" : "50"}`}
+    >
+      <div className="w-[20px] mr-5">
+        <Image
+          src={`${icon + (theme === "dark" ? "-dark.svg" : ".svg")}`}
+          alt={label}
+          width={icon === "/icon-location" ? 15 : 20}
+          height={20}
+        />
+      </div>
 
-      <p className="ml-5">{label || "Not Available"}</p>
+      <p>{label || "Not Available"}</p>
     </div>
   );
 };
