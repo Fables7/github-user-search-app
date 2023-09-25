@@ -11,7 +11,9 @@
   --accent-hover: #60abff;
   /* Light Mode */
   --main-light: #f6f8ff;
+  --secondary-light: #fefefe;
   --gray: #697c9a;
+  --blue-gray: #4b6a9b;
   /* Dark Mode */
   --main-dark: #141d2f;
   --secondary-dark: #1e2a47;

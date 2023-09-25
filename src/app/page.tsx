@@ -1,6 +1,7 @@
 "use client";
 import { SearchBar, ToggleTheme } from "../components";
 import { useSelector } from "react-redux";
+import Image from "next/image";
 
 export default function Home() {
   const user = useSelector((state: any) => state.githubUser);
@@ -11,7 +12,14 @@ export default function Home() {
         <ToggleTheme />
       </div>
       <SearchBar />
-      {user.name && <h1>{user.name}</h1>}
+      <div className="h-[517px] bg-[var(--secondary-light)] dark:bg-[var(--secondary-dark)] rounded-2xl shadow-custom mt-5">
+        <>
+          {user.name && <h1>{user.name}</h1>}
+          {user.avatar && (
+            <Image src={user.avatar} alt={"avatar"} width={70} height={70} />
+          )}
+        </>
+      </div>
     </main>
   );
 }

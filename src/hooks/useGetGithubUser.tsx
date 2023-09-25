@@ -16,7 +16,6 @@ export const useGetGithubUser = (username: string) => {
           },
         }
       );
-
       dispatch(setUser(responseData));
       return responseData;
     },

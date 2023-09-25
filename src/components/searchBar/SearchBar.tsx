@@ -21,7 +21,7 @@ const SearchBar = () => {
     refetch();
   };
   return (
-    <div className="flex w-full h-[60px] bg-white dark:bg-[var(--secondary-dark)] rounded-2xl shadow-custom px-2 items-center mt-8 ">
+    <div className="flex w-full h-[60px] bg-white dark:bg-[var(--secondary-dark)] rounded-2xl shadow-custom pr-2 pl-4 items-center mt-8 ">
       <Image
         src={search}
         alt="Search Icon"
@@ -32,7 +32,7 @@ const SearchBar = () => {
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        className=" text-black dark:text-white placeholder:text-black dark:placeholder:text-white text-ellipsis w-full text-[0.813rem] focus:outline-none bg-white dark:bg-[var(--second)]"
+        className=" text-black dark:text-white placeholder:text-[var(--blue-gray)] dark:placeholder:text-white text-ellipsis w-full text-[0.813rem] focus:outline-none bg-white dark:bg-[var(--second)]"
         placeholder="Search GitHub username..."
       />
       <button
