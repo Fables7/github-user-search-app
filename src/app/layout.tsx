@@ -8,7 +8,7 @@ import ReduxProvider from "@/providers/reduxProvider";
 const inter = Inter({ subsets: ["latin"] });
 const spaceMono = Space_Mono({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {

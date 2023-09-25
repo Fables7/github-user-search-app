@@ -28,14 +28,31 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb)); */
   background: var(--main-light);
-  font-size: 0.938rem;
-  line-height: 25px;
+
   display: flex;
   justify-content: center;
   /* align-items: center; */
   /* min-height: 100vh; */
+}
+
+a {
+  font-size: 0.813rem;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark p {
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: black;
 }
 
 h1 {
@@ -44,10 +61,10 @@ h1 {
   line-height: 38px;
 }
 
-.dark h1,
-h2,
-h3 {
-  color: white;
+p {
+  color: var(--blue-gray);
+  font-size: 0.813rem;
+  line-height: 25px;
 }
 
 h2 {
@@ -58,6 +75,7 @@ h2 {
 
 h3 {
   line-height: 24px;
+  font-weight: bold;
 }
 
 h4 {
