@@ -9,6 +9,7 @@ interface LinkItemsProps {
 
 const LinkItems = ({ icon, label, style }: LinkItemsProps) => {
   const { theme } = useTheme();
+  const link = String(label).includes("http");
   return (
     <div
       className={`flex items-center my-3 opacity-[${
@@ -18,13 +19,15 @@ const LinkItems = ({ icon, label, style }: LinkItemsProps) => {
       <div className="w-[20px] mr-5">
         <Image
           src={`${icon + (theme === "dark" ? "-dark.svg" : ".svg")}`}
-          alt={label}
+          alt={label || "Not Available"}
           width={icon === "/icon-location" ? 15 : 20}
           height={20}
         />
       </div>
 
-      <p className="w-[200px] ">{label || "Not Available"}</p>
+      <p className="w-[200px] ">
+        {link ? <a href={label}>{label}</a> : label || "Not Available"}
+      </p>
     </div>
   );
 };
