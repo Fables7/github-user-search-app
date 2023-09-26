@@ -19,13 +19,13 @@ export default function Home() {
     company,
   } = useSelector((state: any) => state.githubUser);
   return (
-    <main className="flex flex-col w-[327px] m-6 ">
+    <main className="flex flex-col w-[327px] md:w-[573px] m-6 ">
       <div className="flex flex-row w-full  justify-between">
         <h1>devfinder</h1>
         <ToggleTheme />
       </div>
       <SearchBar />
-      <div className="min-h-[517px] bg-[var(--secondary-light)] dark:bg-[var(--secondary-dark)] rounded-2xl shadow-custom mt-5 p-4">
+      <div className="min-h-[517px] md:min-h-[481px] bg-[var(--secondary-light)] dark:bg-[var(--secondary-dark)] rounded-2xl shadow-custom mt-5 p-4 md:p-8">
         {name ? (
           <>
             <div className="flex">
@@ -34,7 +34,7 @@ export default function Home() {
                 alt={"avatar"}
                 width={70}
                 height={70}
-                className=" rounded-full"
+                className=" rounded-full md:h-[117px] md:w-[117px]"
               />
               <div className="ml-5">
                 <h3>{name}</h3>
@@ -60,11 +60,28 @@ export default function Home() {
               repos={repos}
               followers={followers}
             />
-            <LinkItems label={location} icon={"/icon-location"} />
-
-            <LinkItems label={blog} icon={"/icon-website"} />
-            <LinkItems label={twitter} icon={"/icon-twitter"} />
-            <LinkItems label={company} icon={"/icon-company"} />
+            <div className="md:grid md:grid-cols-2 md:grid-rows-2">
+              <LinkItems
+                style="col-start-1 row-start-1"
+                label={location}
+                icon={"/icon-location"}
+              />
+              <LinkItems
+                style={"col-start-1 row-start-2"}
+                label={blog}
+                icon={"/icon-website"}
+              />
+              <LinkItems
+                style={"col-start-2 row-start-1"}
+                label={twitter}
+                icon={"/icon-twitter"}
+              />
+              <LinkItems
+                style={"row-start-2"}
+                label={company}
+                icon={"/icon-company"}
+              />
+            </div>
           </>
         ) : (
           <h1>Search for a user</h1>

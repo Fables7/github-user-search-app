@@ -21,22 +21,22 @@ const SearchBar = () => {
     refetch();
   };
   return (
-    <div className="flex w-full h-[60px] bg-white dark:bg-[var(--secondary-dark)] rounded-2xl shadow-custom pr-2 pl-4 items-center mt-8 ">
+    <div className="flex w-full h-[60px] md:h-[69px] bg-white dark:bg-[var(--secondary-dark)] rounded-2xl shadow-custom pr-2 pl-4 md:pl-8 items-center mt-8 ">
       <Image
         src={search}
         alt="Search Icon"
         width={20}
-        className="mr-2 h-auto"
+        className="mr-2 md:mr-5 h-auto md:w-[24px]"
       />
       <input
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        className=" text-black dark:text-white placeholder:text-[var(--blue-gray)] dark:placeholder:text-white text-ellipsis w-full text-[0.813rem] focus:outline-none bg-white dark:bg-[var(--second)]"
+        className=" text-black dark:text-white placeholder:text-[var(--blue-gray)] dark:placeholder:text-white text-ellipsis w-full text-[0.813rem] md:text-[1.125rem] focus:outline-none bg-white dark:bg-[var(--second)]"
         placeholder="Search GitHub username..."
       />
       <button
-        className="bg-[--accent] text-white p-2 flex items-center rounded-xl w-[115px] h-[46px] justify-center text-[0.875rem] ml-1 hover:bg-[var(--accent-hover)]"
+        className="bg-[--accent] text-white p-2 flex items-center rounded-xl w-[115px] md:w-[140px] h-[46px] justify-center text-[0.875rem] md:text-[1rem] ml-1 hover:bg-[var(--accent-hover)]"
         onClick={searchHandler}
       >
         Search

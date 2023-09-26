@@ -11,9 +11,9 @@ interface DetailItemProps {
 
 const DetailItem = ({ title, value }: DetailItemProps) => {
   return (
-    <div className="flex flex-col items-center justify-center">
-      <p>{title}</p>
-      <h3>{value}</h3>
+    <div className="flex flex-col items-center justify-center md:items-start md:pl-4">
+      <p className="text-[0.688rem] md:text-[0.813rem]">{title}</p>
+      <h3 className="text-[var(--dark-gray)]">{value}</h3>
     </div>
   );
 };

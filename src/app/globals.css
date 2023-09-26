@@ -14,6 +14,7 @@
   --secondary-light: #fefefe;
   --gray: #697c9a;
   --blue-gray: #4b6a9b;
+  --dark-gray: #2b3442;
   /* Dark Mode */
   --main-dark: #141d2f;
   --secondary-dark: #1e2a47;
@@ -65,6 +66,9 @@ p {
   color: var(--blue-gray);
   font-size: 0.813rem;
   line-height: 25px;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 h2 {
@@ -85,4 +89,16 @@ h4 {
 
 .dark body {
   background: var(--main-dark);
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-weight: bold;
+    font-size: 1.625rem;
+    line-height: 38px;
+  }
+
+  p {
+    font-size: 0.938rem;
+  }
 }

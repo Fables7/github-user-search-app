@@ -4,14 +4,17 @@ import { useTheme } from "next-themes";
 interface LinkItemsProps {
   label: string;
   icon: string;
+  style?: string;
 }
 
-const LinkItems = ({ icon, label }: LinkItemsProps) => {
+const LinkItems = ({ icon, label, style }: LinkItemsProps) => {
   const available = label ? true : false;
   const { theme } = useTheme();
   return (
     <div
-      className={`flex items-center my-3 opacity-${available ? "100" : "50"}`}
+      className={`flex items-center my-3 opacity-${
+        available ? "100" : "50"
+      } md:${style}`}
     >
       <div className="w-[20px] mr-5">
         <Image
@@ -22,7 +25,7 @@ const LinkItems = ({ icon, label }: LinkItemsProps) => {
         />
       </div>
 
-      <p>{label || "Not Available"}</p>
+      <p className="w-[200px] ">{label || "Not Available"}</p>
     </div>
   );
 };
