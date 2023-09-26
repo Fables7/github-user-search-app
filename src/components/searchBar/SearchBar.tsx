@@ -36,7 +36,7 @@ const SearchBar = () => {
         placeholder="Search GitHub username..."
       />
       <button
-        className="bg-[--accent] text-white p-2 flex items-center rounded-xl w-[115px] md:w-[140px] h-[46px] justify-center text-[0.875rem] md:text-[1rem] ml-1 hover:bg-[var(--accent-hover)]"
+        className="bg-[--accent] text-white p-2 flex items-center rounded-xl w-[115px] md:w-[140px] h-[46px] justify-center text-[0.875rem] md:text-base ml-1 hover:bg-[var(--accent-hover)]"
         onClick={searchHandler}
       >
         Search

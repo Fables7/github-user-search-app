@@ -8,13 +8,12 @@ interface LinkItemsProps {
 }
 
 const LinkItems = ({ icon, label, style }: LinkItemsProps) => {
-  const available = label ? true : false;
   const { theme } = useTheme();
   return (
     <div
-      className={`flex items-center my-3 opacity-${
-        available ? "100" : "50"
-      } md:${style}`}
+      className={`flex items-center my-3 opacity-[${
+        label ? 1 : 0.5
+      }] md:${style}`}
     >
       <div className="w-[20px] mr-5">
         <Image

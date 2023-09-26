@@ -28,7 +28,7 @@ export default function Home() {
       <div className="min-h-[517px] md:min-h-[481px] bg-[var(--secondary-light)] dark:bg-[var(--secondary-dark)] rounded-2xl shadow-custom mt-5 p-4 md:p-8">
         {name ? (
           <>
-            <div className="flex">
+            <div className="flex items-center">
               <Image
                 src={avatar}
                 alt={"avatar"}
@@ -36,11 +36,11 @@ export default function Home() {
                 height={70}
                 className=" rounded-full md:h-[117px] md:w-[117px]"
               />
-              <div className="ml-5">
+              <div className="ml-5 md:ml-11">
                 <h3>{name}</h3>
                 <a
                   href={`https://github.com/${username}`}
-                  className=" text-[var(--accent)]"
+                  className=" text-[var(--accent)] md:text-base"
                 >
                   @{username}
                 </a>
