@@ -12,11 +12,11 @@ const LinkItems = ({ icon, label, style }: LinkItemsProps) => {
   const link = String(label).includes("http");
   return (
     <div
-      className={`flex items-center my-3 opacity-[${
+      className={`flex items-center my-3  box-border pr-4 opacity-[${
         label ? 1 : 0.5
       }] md:${style}`}
     >
-      <div className="w-[20px] mr-5">
+      <div className="w-[20px] mr-5 ">
         <Image
           src={`${icon + (theme === "dark" ? "-dark.svg" : ".svg")}`}
           alt={label || "Not Available"}
