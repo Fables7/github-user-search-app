@@ -52,6 +52,7 @@ export default function Home() {
     blog,
     twitter,
     company,
+    id,
   } = useSelector((state: any) => state.githubUser);
   return (
     <main className="flex flex-col w-[327px] md:w-[573px] lg:w-[730px] m-6 ">
@@ -61,7 +62,7 @@ export default function Home() {
       </div>
       <SearchBar />
       <div className="min-h-[517px] md:min-h-[481px] lg:min-h-[419px] bg-[var(--secondary-light)] dark:bg-[var(--secondary-dark)] rounded-2xl shadow-custom mt-5 p-4 md:p-8 flex flex-col lg:flex-row">
-        {name ? (
+        {id ? (
           <>
             <div className="flex items-center lg:items-start">
               <Image
@@ -80,7 +81,7 @@ export default function Home() {
             </div>
             <div className="lg:ml-10">
               <UserHeader
-                style={"md:hidden lg:inline"}
+                style={"hidden lg:inline"}
                 name={name}
                 username={username}
                 userCreated={userCreated}

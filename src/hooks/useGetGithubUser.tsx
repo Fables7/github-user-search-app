@@ -16,10 +16,13 @@ export const useGetGithubUser = (username: string) => {
           },
         }
       );
+      console.log("clicked");
+      console.log(responseData);
       dispatch(setUser(responseData));
       return responseData;
     },
     {
+      retry: false,
       enabled: false,
       refetchOnWindowFocus: false,
     }

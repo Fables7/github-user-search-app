@@ -15,6 +15,7 @@ export const githubUserSlice = createSlice({
     location: "",
     bio: "",
     company: "",
+    id: null,
   },
 
   reducers: {
@@ -31,6 +32,7 @@ export const githubUserSlice = createSlice({
       state.location = action.payload.location;
       state.bio = action.payload.bio;
       state.company = action.payload.company;
+      state.id = action.payload.id;
     },
   },
 });

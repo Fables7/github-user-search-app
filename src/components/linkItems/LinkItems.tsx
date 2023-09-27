@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { StyledLinkItem } from "./StyledLinkItems";
 
 interface LinkItemsProps {
   label: string;
@@ -11,10 +12,9 @@ const LinkItems = ({ icon, label, style }: LinkItemsProps) => {
   const { theme } = useTheme();
   const link = String(label).includes("http");
   return (
-    <div
-      className={`flex items-center my-3  box-border pr-4 opacity-[${
-        label ? 1 : 0.5
-      }] md:${style}`}
+    <StyledLinkItem
+      label={label}
+      className={`flex items-center my-3  box-border pr-4 md:${style}`}
     >
       <div className="w-[20px] mr-5 ">
         <Image
@@ -28,7 +28,7 @@ const LinkItems = ({ icon, label, style }: LinkItemsProps) => {
       <p className="w-[200px] ">
         {link ? <a href={label}>{label}</a> : label || "Not Available"}
       </p>
-    </div>
+    </StyledLinkItem>
   );
 };
 
