@@ -55,7 +55,7 @@ export default function Home() {
     id,
   } = useSelector((state: any) => state.githubUser);
   return (
-    <main className="flex flex-col w-[327px] md:w-[573px] lg:w-[730px] m-6 ">
+    <main className="flex flex-col w-[327px] md:w-[573px] lg:w-[730px] m-6 md:mt-20">
       <div className="flex flex-row w-full  justify-between">
         <h1>devfinder</h1>
         <ToggleTheme />

@@ -35,7 +35,11 @@ const SearchBar = () => {
         className=" text-black dark:text-white placeholder:text-[var(--blue-gray)] dark:placeholder:text-white text-ellipsis w-full text-[0.813rem] md:text-[1.125rem] focus:outline-none bg-white dark:bg-[var(--second)]"
         placeholder="Search GitHub username..."
       />
-      {isError && <p className=" min-w-fit text-red-500">No Results</p>}
+      {isError && (
+        <p className=" min-w-fit dark:text-red-500 text-red-500 mx-4">
+          No Results
+        </p>
+      )}
       <button
         className="bg-[--accent] text-white p-2 flex items-center rounded-xl w-[115px] md:w-[140px] h-[46px] justify-center text-[0.875rem] md:text-base ml-1 hover:bg-[var(--accent-hover)]"
         onClick={searchHandler}
