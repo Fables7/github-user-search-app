@@ -1,21 +1,23 @@
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { StyledLinkItem } from "./StyledLinkItems";
+import clsx from "clsx";
 
 interface LinkItemsProps {
   label: string;
   icon: string;
-  style?: string;
+  className?: string;
 }
 
-const LinkItems = ({ icon, label, style }: LinkItemsProps) => {
+const LinkItems = ({ icon, label, className }: LinkItemsProps) => {
   const { theme } = useTheme();
   const link = String(label).includes("http");
+  const rootClassName = clsx(
+    "flex items-center my-3  box-border pr-4",
+    className
+  );
   return (
-    <StyledLinkItem
-      label={label}
-      className={`flex items-center my-3  box-border pr-4 md:${style}`}
-    >
+    <StyledLinkItem label={label} className={rootClassName}>
       <div className="w-[20px] mr-5 ">
         <Image
           src={`${icon + (theme === "dark" ? "-dark.svg" : ".svg")}`}

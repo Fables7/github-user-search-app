@@ -2,27 +2,29 @@
 import { SearchBar, ToggleTheme, UserDetails, LinkItems } from "../components";
 import { useSelector } from "react-redux";
 import Image from "next/image";
+import clsx from "clsx";
 
 interface UserHeaderProps {
   name: string;
   username: string;
   userCreated: string;
-  style?: string;
+  className?: string;
 }
 
 const UserHeader = ({
   name,
   username,
   userCreated,
-  style,
+  className,
 }: UserHeaderProps) => {
   const joined = new Date(userCreated).toLocaleDateString("en-UK", {
     day: "2-digit",
     month: "short",
     year: "numeric",
   });
+  const rootClassName = clsx("ml-5 md:ml-11 lg:ml-0", className);
   return (
-    <div className={`ml-5 md:ml-11 lg:ml-0 ${style}`}>
+    <div className={rootClassName}>
       <div className="flex items-center justify-between">
         <h3>{name}</h3>
         <p className="md:hidden lg:inline">Joined {joined}</p>
@@ -73,7 +75,7 @@ export default function Home() {
                 className=" rounded-full md:h-[117px] md:w-[117px]"
               />
               <UserHeader
-                style={"lg:hidden"}
+                className={"lg:hidden"}
                 name={name}
                 username={username}
                 userCreated={userCreated}
@@ -81,7 +83,7 @@ export default function Home() {
             </div>
             <div className="lg:ml-10">
               <UserHeader
-                style={"hidden lg:inline"}
+                className={"hidden lg:inline"}
                 name={name}
                 username={username}
                 userCreated={userCreated}
@@ -94,22 +96,22 @@ export default function Home() {
               />
               <div className="md:grid md:grid-cols-2 md:grid-rows-2">
                 <LinkItems
-                  style="col-start-1 row-start-1"
+                  className="md:col-start-1 row-start-1"
                   label={location}
                   icon={"/icon-location"}
                 />
                 <LinkItems
-                  style={"col-start-1 row-start-2"}
+                  className={"md:col-start-1 row-start-2"}
                   label={blog}
                   icon={"/icon-website"}
                 />
                 <LinkItems
-                  style={"col-start-2 row-start-1"}
+                  className={"md:col-start-2 row-start-1"}
                   label={twitter}
                   icon={"/icon-twitter"}
                 />
                 <LinkItems
-                  style={"row-start-2"}
+                  className={"md:row-start-2"}
                   label={company}
                   icon={"/icon-company"}
                 />
